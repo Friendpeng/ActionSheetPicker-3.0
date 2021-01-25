@@ -172,6 +172,10 @@
     if (pickerLabel == nil) {
         pickerLabel = [[UILabel alloc] init];
     }
+    // 支持2行显示
+    if ([pickerLabel isKindOfClass:[UILabel class]]) {
+        pickerLabel.numberOfLines = 2;
+    }
     id obj = (self.data)[component][row];
     
     NSAttributedString *attributeTitle = nil;

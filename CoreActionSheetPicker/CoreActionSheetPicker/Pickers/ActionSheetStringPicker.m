@@ -180,7 +180,10 @@
     if (pickerLabel == nil) {
         pickerLabel = [[UILabel alloc] init];
     }
-    
+    // 支持2行显示
+    if ([pickerLabel isKindOfClass:[UILabel class]]) {
+        pickerLabel.numberOfLines = 2;
+    }
     NSAttributedString *attributedTitle = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
     if (attributedTitle == nil) {
         attributedTitle = [[NSAttributedString alloc] initWithString:@"" attributes:self.pickerTextAttributes];
